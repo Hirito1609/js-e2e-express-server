@@ -36,6 +36,11 @@ steps:
     publishLocation: 'pipeline'
   displayName: 'Publish npm artifact'
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
+    
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Azure subscription 1 (b4f6351e-9c4a-4f23-a60a-0f37648c0b96)'
